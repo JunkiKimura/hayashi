@@ -1,0 +1,1865 @@
+@charset "UTF-8";
+/* [ variable ]
+-------------------------------------------------*/
+/* font */
+/* font */
+/*  */
+/* [ font style ]
+-------------------------------------------------*/
+/* [ opacity ]
+-------------------------------------------------*/
+/* [ blur ]
+-------------------------------------------------*/
+/* [ easing ]
+-------------------------------------------------*/
+/* [ transform ]
+-------------------------------------------------*/
+/* [ layout ]
+-------------------------------------------------*/
+/* -----------------------------------------------
+ [1. Reset(リセット) + Base(ベース)]
+-------------------------------------------------- */
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+@import "https://fonts.googleapis.com/css?family=Open+Sans:400,600,600i,700";
+/* line 12, ../_sass/kazu/newstyle.scss */
+html * {
+  /*-moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;*/
+  -webkit-font-smoothing: antialiased;
+  -webkit-appearance: none;
+  outline: none;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* line 25, ../_sass/kazu/newstyle.scss */
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 28, ../_sass/kazu/newstyle.scss */
+body {
+  /* ゴシック */
+  font-family: YuGothic, '游ゴシック','Noto Sans JP',"Meiryo","メイリオ","ＭＳ Ｐゴシック",sans-serif;
+  font-size: 14px;
+  line-height: 1.78;
+  color: #282b30;
+  -webkit-text-size-adjust: 100%;
+  background-color: #fff;
+}
+
+/* line 38, ../_sass/kazu/newstyle.scss */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code, del, em, img, strong,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 51, ../_sass/kazu/newstyle.scss */
+article, aside, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: block;
+  outline: none;
+}
+
+/* line 59, ../_sass/kazu/newstyle.scss */
+h1, h2, h3, h4, h5, h6, dt {
+  line-height: 1.47;
+}
+
+/* line 63, ../_sass/kazu/newstyle.scss */
+p {
+  line-height: 1.67;
+}
+
+/* line 66, ../_sass/kazu/newstyle.scss */
+dd, li, th, td, input, textarea {
+  line-height: 1.67;
+  text-align: left;
+}
+
+/* line 71, ../_sass/kazu/newstyle.scss */
+ul, ol {
+  list-style-type: none;
+  /* マークを使用しない */
+}
+
+/* line 74, ../_sass/kazu/newstyle.scss */
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+/* line 78, ../_sass/kazu/newstyle.scss */
+a, input, button, textarea {
+  outline: none;
+  color: #282b30;
+}
+
+/* line 82, ../_sass/kazu/newstyle.scss */
+a:visited {
+  color: #282b30;
+}
+
+/* line 85, ../_sass/kazu/newstyle.scss */
+a:active {
+  color: #282b30;
+}
+
+/* line 88, ../_sass/kazu/newstyle.scss */
+::-moz-selection {
+  background-color: #a7bbfe;
+}
+
+/* line 91, ../_sass/kazu/newstyle.scss */
+::selection {
+  background-color: #a7bbfe;
+}
+
+/* line 95, ../_sass/kazu/newstyle.scss */
+body.other .d_tablet, body.other .d_smp {
+  display: none !important;
+}
+
+/* line 101, ../_sass/kazu/newstyle.scss */
+body.tablet .d_pc, body.smp .d_pc {
+  display: none !important;
+}
+
+/* [1. Reset(リセット) + Base(ベース)] --> End */
+/* -----------------------------------------------
+ [2. Module(モジュール)]
+-------------------------------------------------- */
+/* Button Module
+-------------------------------------------------- */
+/* Normal Button */
+/* line 116, ../_sass/kazu/newstyle.scss */
+.btn {
+  position: relative;
+  height: 40px;
+  box-sizing: border-box;
+  background: #515c6e;
+  border-bottom: 1px solid #303a49;
+  border-top: 1px solid #626b79;
+  border-left: 1px solid #354051;
+  border-right: 1px solid #354051;
+  border-radius: 3px;
+  transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  /* Icon */
+  /* design type */
+}
+/* line 128, ../_sass/kazu/newstyle.scss */
+.btn:hover {
+  background: #8d9fbd;
+}
+/* line 131, ../_sass/kazu/newstyle.scss */
+.btn > a, .btn span, .btn button {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: block;
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+  position: relative;
+  color: #fff;
+  font-size: 14px;
+  line-height: 38px;
+  text-align: center;
+}
+/* line 164, ../_sass/kazu/newstyle.scss */
+.btn.icon-search:after {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 17px;
+  height: 38px;
+  background-image: url("../img/common/icon-search.svg");
+  right: 20px;
+}
+/* line 169, ../_sass/kazu/newstyle.scss */
+.btn.icon-upload:after {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 17px;
+  height: 38px;
+  background-image: url("../img/common/icon-upload.svg");
+  right: 20px;
+  width: 15px;
+  right: 10px;
+}
+/* line 176, ../_sass/kazu/newstyle.scss */
+.btn.icon-download:after {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 17px;
+  height: 38px;
+  background-image: url("../img/common/icon-download.svg");
+  right: 20px;
+  width: 16px;
+  right: 10px;
+}
+/* line 183, ../_sass/kazu/newstyle.scss */
+.btn.icon-add:after {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 17px;
+  height: 38px;
+  background-image: url("../img/common/icon-add.svg");
+  right: 20px;
+  width: 16px;
+  right: none;
+  left: 10px;
+  height: 13px;
+}
+/* line 193, ../_sass/kazu/newstyle.scss */
+.btn.icon-arrow:after {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  right: 14px;
+  transform: rotate(-45deg);
+}
+/* line 211, ../_sass/kazu/newstyle.scss */
+.btn.type-gray {
+  background: #dbdcde;
+  border-top: 1px solid #c7cdd5;
+  border-bottom: 1px solid #a5abb5;
+  border-left: 1px solid #bbc2cc;
+  border-right: 1px solid #bbc2cc;
+}
+/* line 218, ../_sass/kazu/newstyle.scss */
+.btn.type-gray:hover {
+  background: #898a8e;
+}
+/* line 221, ../_sass/kazu/newstyle.scss */
+.btn.type-gray > a, .btn.type-gray span, .btn.type-gray button {
+  color: #282b30;
+}
+/* line 225, ../_sass/kazu/newstyle.scss */
+.btn.type-red {
+  background: #e45733;
+  border-top: 1px solid #d57057;
+  border-bottom: 1px solid #b34225;
+  border-left: 1px solid #cc5132;
+  border-right: 1px solid #cc5132;
+}
+/* line 231, ../_sass/kazu/newstyle.scss */
+.btn.type-red:hover {
+  background: #963a22;
+}
+/* line 234, ../_sass/kazu/newstyle.scss */
+.btn.type-red > a, .btn.type-red span, .btn.type-red button {
+  font-weight: bold;
+}
+/* line 239, ../_sass/kazu/newstyle.scss */
+.btn.type-brown > a, .btn.type-brown span, .btn.type-brown button {
+  font-weight: bold;
+}
+/* line 243, ../_sass/kazu/newstyle.scss */
+.btn.type-name {
+  background: #fff;
+  border-top: 1px solid #d4d7df;
+  border-bottom: 1px solid #b3b6c0;
+  border-left: 1px solid #caced9;
+  border-right: 1px solid #caced9;
+}
+/* line 250, ../_sass/kazu/newstyle.scss */
+.btn.type-name > a, .btn.type-name span, .btn.type-name button {
+  color: #8b723b;
+  text-align: left;
+  padding-left: 10px;
+}
+/* line 256, ../_sass/kazu/newstyle.scss */
+.btn.type-name:hover {
+  background: #ddd2b6;
+}
+/* line 260, ../_sass/kazu/newstyle.scss */
+.btn.type-name:after {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -2px;
+  width: 3px;
+  height: 3px;
+  border-right: 1px solid #958259;
+  border-bottom: 1px solid #958259;
+  right: 10px;
+  transform: rotate(-45deg);
+}
+/* line 280, ../_sass/kazu/newstyle.scss */
+.btn.btn-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 284, ../_sass/kazu/newstyle.scss */
+.btn.btn-inline {
+  display: inline-block;
+}
+
+/* line 289, ../_sass/kazu/newstyle.scss */
+.btn {
+  /* width */
+  /* height */
+}
+/* line 291, ../_sass/kazu/newstyle.scss */
+.btn.w50 {
+  width: 50px;
+}
+/* line 294, ../_sass/kazu/newstyle.scss */
+.btn.w90 {
+  width: 90px;
+}
+/* line 297, ../_sass/kazu/newstyle.scss */
+.btn.w110 {
+  width: 110px;
+}
+/* line 300, ../_sass/kazu/newstyle.scss */
+.btn.w170 {
+  width: 170px;
+}
+/* line 303, ../_sass/kazu/newstyle.scss */
+.btn.w200 {
+  width: 200px;
+}
+/* line 306, ../_sass/kazu/newstyle.scss */
+.btn.w220 {
+  width: 220px;
+}
+/* line 309, ../_sass/kazu/newstyle.scss */
+.btn.w230 {
+  width: 230px;
+}
+/* line 312, ../_sass/kazu/newstyle.scss */
+.btn.w260 {
+  width: 260px;
+}
+/* line 317, ../_sass/kazu/newstyle.scss */
+.btn.h50 {
+  height: 50px;
+}
+/* line 319, ../_sass/kazu/newstyle.scss */
+.btn.h50 > a, .btn.h50 span, .btn.h50 button {
+  line-height: 48px;
+}
+/* line 323, ../_sass/kazu/newstyle.scss */
+.btn.h25 {
+  height: 25px;
+}
+/* line 325, ../_sass/kazu/newstyle.scss */
+.btn.h25 > a, .btn.h25 span, .btn.h25 button {
+  font-size: 13px;
+  line-height: 23px;
+}
+/* line 330, ../_sass/kazu/newstyle.scss */
+.btn.h20 {
+  height: 20px;
+}
+/* line 332, ../_sass/kazu/newstyle.scss */
+.btn.h20 > a, .btn.h20 span, .btn.h20 button {
+  font-size: 11px;
+  line-height: 18px;
+}
+
+/* #Side
+-------------------------------------------------- */
+/* line 342, ../_sass/kazu/newstyle.scss */
+#side {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll;
+}
+/* line 354, ../_sass/kazu/newstyle.scss */
+#side #side-inner {
+  width: 288px;
+    /*#site-logo{
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+    }*/
+}
+/* line 366, ../_sass/kazu/newstyle.scss */
+#side #side-inner .user-box {
+  background: #f4f5f9;
+  padding: 7px 20px;
+}
+/* line 369, ../_sass/kazu/newstyle.scss */
+#side #side-inner .user-box .left {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 372, ../_sass/kazu/newstyle.scss */
+#side #side-inner .user-box .left .photo {
+  background-position: center;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+/* line 377, ../_sass/kazu/newstyle.scss */
+#side #side-inner .user-box .left .photo img {
+  display: block;
+}
+/* line 382, ../_sass/kazu/newstyle.scss */
+#side #side-inner .user-box .right {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 17px;
+}
+/* line 386, ../_sass/kazu/newstyle.scss */
+#side #side-inner .user-box .right .name {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 42px;
+}
+/* line 397, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li {
+  border-bottom: 1px solid #d6dae4;
+}
+/* line 399, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li a {
+  display: block;
+  line-height: 20px;
+  padding: 15px 0 15px 50px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+/* line 407, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li a:before, #side #side-inner .gnav .tab ul li.active a:after, .tab #side #side-inner .gnav ul li.active a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 20px;
+  width: 22px;
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 419, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li a.arrow:after {
+  display: inline-block;
+  content: '';
+  background: url("../img/arrow.svg") no-repeat;
+  background-size: 9px auto;
+  width: 9px;
+  height: 18px;
+  position: absolute;
+  right: 20px;
+  transform: rotate(90deg);
+}
+/* line 431, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li a.arrow.active:after {
+  transform: rotate(-90deg);
+}
+/* line 439, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.active > a, #side #side-inner .gnav ul li a:hover {
+  transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  background-color: #515c6e;
+  color: #fff;
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi1 a:before, #side #side-inner .gnav .tab ul li.navi1 li.active a:after, .tab #side #side-inner .gnav ul li.navi1 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi1 a:after, .tab #side #side-inner .gnav ul li.active li.navi1 a:after {
+  background-image: url(../img/common/gnav1.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi1.active > a:before, #side #side-inner .gnav .tab ul li.navi1.active > a:after, .tab #side #side-inner .gnav ul li.navi1.active > a:after, #side #side-inner .gnav ul li.navi1 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi1 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi1 > a:hover:after {
+  background-image: url(../img/common/gnav1on.svg);
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi2 a:before, #side #side-inner .gnav .tab ul li.navi2 li.active a:after, .tab #side #side-inner .gnav ul li.navi2 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi2 a:after, .tab #side #side-inner .gnav ul li.active li.navi2 a:after {
+  background-image: url(../img/common/gnav2.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi2.active > a:before, #side #side-inner .gnav .tab ul li.navi2.active > a:after, .tab #side #side-inner .gnav ul li.navi2.active > a:after, #side #side-inner .gnav ul li.navi2 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi2 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi2 > a:hover:after {
+  background-image: url(../img/common/gnav2on.svg);
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi3 a:before, #side #side-inner .gnav .tab ul li.navi3 li.active a:after, .tab #side #side-inner .gnav ul li.navi3 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi3 a:after, .tab #side #side-inner .gnav ul li.active li.navi3 a:after {
+  background-image: url(../img/common/gnav3.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi3.active > a:before, #side #side-inner .gnav .tab ul li.navi3.active > a:after, .tab #side #side-inner .gnav ul li.navi3.active > a:after, #side #side-inner .gnav ul li.navi3 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi3 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi3 > a:hover:after {
+  background-image: url(../img/common/gnav3on.svg);
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi4 a:before, #side #side-inner .gnav .tab ul li.navi4 li.active a:after, .tab #side #side-inner .gnav ul li.navi4 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi4 a:after, .tab #side #side-inner .gnav ul li.active li.navi4 a:after {
+  background-image: url(../img/common/gnav4.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi4.active > a:before, #side #side-inner .gnav .tab ul li.navi4.active > a:after, .tab #side #side-inner .gnav ul li.navi4.active > a:after, #side #side-inner .gnav ul li.navi4 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi4 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi4 > a:hover:after {
+  background-image: url(../img/common/gnav4on.svg);
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi5 a:before, #side #side-inner .gnav .tab ul li.navi5 li.active a:after, .tab #side #side-inner .gnav ul li.navi5 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi5 a:after, .tab #side #side-inner .gnav ul li.active li.navi5 a:after {
+  background-image: url(../img/common/gnav5.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi5.active > a:before, #side #side-inner .gnav .tab ul li.navi5.active > a:after, .tab #side #side-inner .gnav ul li.navi5.active > a:after, #side #side-inner .gnav ul li.navi5 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi5 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi5 > a:hover:after {
+  background-image: url(../img/common/gnav5on.svg);
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi6 a:before, #side #side-inner .gnav .tab ul li.navi6 li.active a:after, .tab #side #side-inner .gnav ul li.navi6 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi6 a:after, .tab #side #side-inner .gnav ul li.active li.navi6 a:after {
+  background-image: url(../img/common/gnav6.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi6.active > a:before, #side #side-inner .gnav .tab ul li.navi6.active > a:after, .tab #side #side-inner .gnav ul li.navi6.active > a:after, #side #side-inner .gnav ul li.navi6 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi6 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi6 > a:hover:after {
+  background-image: url(../img/common/gnav6on.svg);
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi7 a:before, #side #side-inner .gnav .tab ul li.navi7 li.active a:after, .tab #side #side-inner .gnav ul li.navi7 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi7 a:after, .tab #side #side-inner .gnav ul li.active li.navi7 a:after {
+  background-image: url(../img/common/gnav7.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi7.active > a:before, #side #side-inner .gnav .tab ul li.navi7.active > a:after, .tab #side #side-inner .gnav ul li.navi7.active > a:after, #side #side-inner .gnav ul li.navi7 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi7 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi7 > a:hover:after {
+  background-image: url(../img/common/gnav7on.svg);
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi8 a:before, #side #side-inner .gnav .tab ul li.navi8 li.active a:after, .tab #side #side-inner .gnav ul li.navi8 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi8 a:after, .tab #side #side-inner .gnav ul li.active li.navi8 a:after {
+  background-image: url(../img/common/gnav8.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi8.active > a:before, #side #side-inner .gnav .tab ul li.navi8.active > a:after, .tab #side #side-inner .gnav ul li.navi8.active > a:after, #side #side-inner .gnav ul li.navi8 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi8 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi8 > a:hover:after {
+  background-image: url(../img/common/gnav8on.svg);
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi9 a:before, #side #side-inner .gnav .tab ul li.navi9 li.active a:after, .tab #side #side-inner .gnav ul li.navi9 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi9 a:after, .tab #side #side-inner .gnav ul li.active li.navi9 a:after {
+  background-image: url(../img/common/gnav9.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi9.active > a:before, #side #side-inner .gnav .tab ul li.navi9.active > a:after, .tab #side #side-inner .gnav ul li.navi9.active > a:after, #side #side-inner .gnav ul li.navi9 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi9 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi9 > a:hover:after {
+  background-image: url(../img/common/gnav9on.svg);
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi10 a:before, #side #side-inner .gnav .tab ul li.navi10 li.active a:after, .tab #side #side-inner .gnav ul li.navi10 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi10 a:after, .tab #side #side-inner .gnav ul li.active li.navi10 a:after {
+  background-image: url(../img/common/gnav10.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi10.active > a:before, #side #side-inner .gnav .tab ul li.navi10.active > a:after, .tab #side #side-inner .gnav ul li.navi10.active > a:after, #side #side-inner .gnav ul li.navi10 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi10 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi10 > a:hover:after {
+  background-image: url(../img/common/gnav10on.svg);
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi11 a:before, #side #side-inner .gnav .tab ul li.navi11 li.active a:after, .tab #side #side-inner .gnav ul li.navi11 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi11 a:after, .tab #side #side-inner .gnav ul li.active li.navi11 a:after {
+  background-image: url(../img/common/gnav11.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi11.active > a:before, #side #side-inner .gnav .tab ul li.navi11.active > a:after, .tab #side #side-inner .gnav ul li.navi11.active > a:after, #side #side-inner .gnav ul li.navi11 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi11 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi11 > a:hover:after {
+  background-image: url(../img/common/gnav11on.svg);
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi12 a:before, #side #side-inner .gnav .tab ul li.navi12 li.active a:after, .tab #side #side-inner .gnav ul li.navi12 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi12 a:after, .tab #side #side-inner .gnav ul li.active li.navi12 a:after {
+  background-image: url(../img/common/gnav12.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi12.active > a:before, #side #side-inner .gnav .tab ul li.navi12.active > a:after, .tab #side #side-inner .gnav ul li.navi12.active > a:after, #side #side-inner .gnav ul li.navi12 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi12 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi12 > a:hover:after {
+  background-image: url(../img/common/gnav12on.svg);
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi13 a:before, #side #side-inner .gnav .tab ul li.navi13 li.active a:after, .tab #side #side-inner .gnav ul li.navi13 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi13 a:after, .tab #side #side-inner .gnav ul li.active li.navi13 a:after {
+  background-image: url(../img/common/gnav13.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi13.active > a:before, #side #side-inner .gnav .tab ul li.navi13.active > a:after, .tab #side #side-inner .gnav ul li.navi13.active > a:after, #side #side-inner .gnav ul li.navi13 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi13 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi13 > a:hover:after {
+  background-image: url(../img/common/gnav13on.svg);
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi14 a:before, #side #side-inner .gnav .tab ul li.navi14 li.active a:after, .tab #side #side-inner .gnav ul li.navi14 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi14 a:after, .tab #side #side-inner .gnav ul li.active li.navi14 a:after {
+  background-image: url(../img/common/gnav14.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi14.active > a:before, #side #side-inner .gnav .tab ul li.navi14.active > a:after, .tab #side #side-inner .gnav ul li.navi14.active > a:after, #side #side-inner .gnav ul li.navi14 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi14 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi14 > a:hover:after {
+  background-image: url(../img/common/gnav14on.svg);
+}
+/* line 448, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi15 a:before, #side #side-inner .gnav .tab ul li.navi15 li.active a:after, .tab #side #side-inner .gnav ul li.navi15 li.active a:after, #side #side-inner .gnav .tab ul li.active li.navi15 a:after, .tab #side #side-inner .gnav ul li.active li.navi15 a:after {
+  background-image: url(../img/common/gnav15.svg);
+  background-size: 16px auto;
+}
+/* line 452, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li.navi15.active > a:before, #side #side-inner .gnav .tab ul li.navi15.active > a:after, .tab #side #side-inner .gnav ul li.navi15.active > a:after, #side #side-inner .gnav ul li.navi15 > a:hover:before, #side #side-inner .gnav .tab ul li.active li.navi15 > a:hover:after, .tab #side #side-inner .gnav ul li.active li.navi15 > a:hover:after {
+  background-image: url(../img/common/gnav15on.svg);
+}
+/* line 460, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li .sub-nav {
+  border-top: 1px solid #d6dae4;
+  display: none;
+  background: #f4f5f9;
+}
+/* line 467, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li .sub-nav li a {
+  line-height: 30px;
+  padding: 3px 0px 3px 50px;
+  font-size: 14px;
+  font-weight: normal;
+}
+/* line 472, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li .sub-nav li a:before, #side #side-inner .gnav .tab ul li.active .sub-nav li a:after, .tab #side #side-inner .gnav ul li.active .sub-nav li a:after {
+  background-image: none;
+}
+/* line 475, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li .sub-nav li a:hover {
+  background-color: #d6dae4;
+}
+/* line 477, ../_sass/kazu/newstyle.scss */
+#side #side-inner .gnav ul li .sub-nav li a:hover:before, #side #side-inner .gnav .tab ul li.active .sub-nav li a:hover:after, .tab #side #side-inner .gnav ul li.active .sub-nav li a:hover:after {
+  background-image: none;
+}
+
+/* #Error
+-------------------------------------------------- */
+/* line 495, ../_sass/kazu/newstyle.scss */
+.error input[type="text"], .error textarea {
+  background: #fef4f6;
+}
+
+/* line 499, ../_sass/kazu/newstyle.scss */
+.error-text {
+  color: #e81162;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+/* line 505, ../_sass/kazu/newstyle.scss */
+.form-text {
+  display: inline-block;
+  line-height: 40px;
+}
+/* line 508, ../_sass/kazu/newstyle.scss */
+.form-text.small {
+  line-height: 25px;
+}
+
+/* #Content
+-------------------------------------------------- */
+/* line 515, ../_sass/kazu/newstyle.scss */
+#content {
+  padding-left: 70px;
+  min-width: 980px;
+}
+/* line 519, ../_sass/kazu/newstyle.scss */
+#content.side-show {
+  padding-left: 288px;
+}
+
+/* #Header
+-------------------------------------------------- */
+/* line 527, ../_sass/kazu/newstyle.scss */
+#header {
+  background: #958259;
+  border-bottom: 1px solid #70613e;
+  height: 50px;
+}
+/* line 531, ../_sass/kazu/newstyle.scss */
+#header #header-inner {
+  position: absolute;
+  right: 0;
+}
+/* line 534, ../_sass/kazu/newstyle.scss */
+#header #header-inner .user-box {
+  float: left;
+  border-left: 1px solid #85734b;
+}
+/* line 537, ../_sass/kazu/newstyle.scss */
+#header #header-inner .user-box .logout {
+  border-left: 1px solid #a48e5f;
+  font-weight: bold;
+  color: #fff;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 15px 25px 15px 45px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+}
+/* line 547, ../_sass/kazu/newstyle.scss */
+#header #header-inner .user-box .logout:hover {
+  -ms-filter: "alpha(opacity=$num)";
+  /* IE8 */
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$num)";
+}
+/* line 550, ../_sass/kazu/newstyle.scss */
+#header #header-inner .user-box .logout:before, #header #header-inner .user-box .tab ul li.active a.logout:after, .tab ul li.active #header #header-inner .user-box a.logout:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  background: url(../img/common/icon-logout.svg) no-repeat center;
+  width: 18px;
+  height: 48px;
+  background-size: 18px auto;
+  left: 20px;
+  top: 0;
+}
+/* line 564, ../_sass/kazu/newstyle.scss */
+#header #header-inner .user-box .name {
+  border-left: 1px solid #a48e5f;
+  font-weight: bold;
+  color: #fff;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 15px 20px 15px 20px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+}
+/* line 574, ../_sass/kazu/newstyle.scss */
+#header #header-inner .user-box .name:hover {
+  -ms-filter: "alpha(opacity=$num)";
+  /* IE8 */
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$num)";
+}
+
+/* #Footer
+-------------------------------------------------- */
+/* line 584, ../_sass/kazu/newstyle.scss */
+#footer {
+  margin-top: 60px;
+}
+/* line 586, ../_sass/kazu/newstyle.scss */
+#footer .inner {
+  position: relative;
+  min-width: 1007px;
+}
+/* line 590, ../_sass/kazu/newstyle.scss */
+#footer .pagetop {
+  position: absolute;
+  right: 30px;
+  top: -23px;
+}
+/* line 594, ../_sass/kazu/newstyle.scss */
+#footer .pagetop a {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: #515c6e url(../img/common/arrow-top-white.svg) no-repeat center;
+  background-size: 7px 15px;
+}
+/* line 603, ../_sass/kazu/newstyle.scss */
+#footer .pagetop a:hover {
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.565, 1);
+  -moz-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.565, 1);
+  -webkit-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.565, 1);
+  -ms-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.565, 1);
+  -ms-filter: "alpha(opacity=$num)";
+  /* IE8 */
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$num)";
+}
+/* line 609, ../_sass/kazu/newstyle.scss */
+#footer .footer-content {
+  overflow: hidden;
+  border-top: 1px solid #c3c5cb;
+  padding-left: 30px;
+}
+/* line 613, ../_sass/kazu/newstyle.scss */
+#footer .footer-content ul {
+  overflow: hidden;
+  float: left;
+}
+/* line 616, ../_sass/kazu/newstyle.scss */
+#footer .footer-content ul li {
+  float: left;
+  padding: 30px 0;
+}
+/* line 619, ../_sass/kazu/newstyle.scss */
+#footer .footer-content ul li.logo {
+  margin-right: 25px;
+}
+/* line 621, ../_sass/kazu/newstyle.scss */
+#footer .footer-content ul li.logo img {
+  margin-top: -5px;
+}
+/* line 625, ../_sass/kazu/newstyle.scss */
+#footer .footer-content ul li a {
+  text-decoration: none;
+}
+/* line 630, ../_sass/kazu/newstyle.scss */
+#footer .footer-content .copy {
+  float: right;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 10px;
+  line-height: 20px;
+  padding: 30px 0;
+  text-align: center;
+  margin-right: 15px;
+}
+
+/* #Body
+-------------------------------------------------- */
+/* line 645, ../_sass/kazu/newstyle.scss */
+.help {
+  text-indent: -9999px;
+  width: 18px;
+  height: 22px;
+  display: inline-block;
+  background: url(../img/common/icon-help.svg) no-repeat center;
+  background-size: contain;
+}
+
+/* section parts */
+/* line 655, ../_sass/kazu/newstyle.scss */
+.section-container {
+  position: relative;
+}
+/* line 658, ../_sass/kazu/newstyle.scss */
+.section-container .breadcrumb {
+  background: #f8f3e9;
+  border-bottom: 1px solid #e2e2e2;
+  height: 24px;
+}
+/* line 663, ../_sass/kazu/newstyle.scss */
+.section-container .breadcrumb ul {
+  padding: 0px 30px;
+}
+/* line 665, ../_sass/kazu/newstyle.scss */
+.section-container .breadcrumb ul li {
+  display: inline-block;
+  font-size: 11px;
+}
+/* line 669, ../_sass/kazu/newstyle.scss */
+.section-container .breadcrumb ul li span {
+  display: inline-block;
+  margin: 0 13px;
+  color: #9c8a65;
+}
+/* line 680, ../_sass/kazu/newstyle.scss */
+.section-container h1 {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 38px;
+  padding: 20px 0 20px 60px;
+  border-bottom: 2px solid #c3c5cb;
+  position: relative;
+}
+/* line 687, ../_sass/kazu/newstyle.scss */
+.section-container h1:before {
+  content: '';
+  display: block;
+  width: 11px;
+  height: 11px;
+  left: 30px;
+  top: 50%;
+  margin-top: -10px;
+  position: absolute;
+  border: 4px solid #958259;
+  border-right-color: #70613e;
+  border-bottom-color: #70613e;
+}
+/* line 703, ../_sass/kazu/newstyle.scss */
+.section-container h2 {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 33px;
+  padding: 13px 0 13px 60px;
+  border-top: 1px solid #c3c5cb;
+  border-bottom: 2px solid #c3c5cb;
+  background: #edeef2;
+  position: relative;
+}
+/* line 712, ../_sass/kazu/newstyle.scss */
+.section-container h2:before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 4px;
+  left: 30px;
+  top: 50%;
+  margin-top: -2px;
+  content: '';
+  display: block;
+  width: 0px;
+  height: 4px;
+  position: absolute;
+  border-left: 9px solid #958259;
+  border-right: 9px solid #70613e;
+}
+/* line 731, ../_sass/kazu/newstyle.scss */
+.section-container h2.step .number {
+  display: inline-block;
+  color: #958259;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.05em;
+  font-style: italic;
+  margin-right: 30px;
+}
+/* line 742, ../_sass/kazu/newstyle.scss */
+.section-container h3 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 27px;
+  padding: 3px 0 3px 20px;
+  border-bottom: 1px solid #d6dae4;
+  position: relative;
+}
+/* line 750, ../_sass/kazu/newstyle.scss */
+.section-container h3:before {
+  left: 0;
+  top: 50%;
+  margin-top: -6px;
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0px;
+  height: 12px;
+  border-left: 12px solid #958259;
+}
+/* line 764, ../_sass/kazu/newstyle.scss */
+.section-container .section-content {
+  padding: 0 30px;
+  margin: 30px 0 50px;
+}
+/* line 768, ../_sass/kazu/newstyle.scss */
+.section-container .headline-text {
+  font-size: 16px;
+  line-height: 25px;
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+/* line 774, ../_sass/kazu/newstyle.scss */
+.section-container .subhead {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+/* line 780, ../_sass/kazu/newstyle.scss */
+.section-container .text {
+  margin-top: 20px;
+}
+/* line 783, ../_sass/kazu/newstyle.scss */
+.section-container .notice {
+  margin-top: 15px;
+  font-size: 11px;
+  line-height: 20px;
+}
+/* line 788, ../_sass/kazu/newstyle.scss */
+.section-container .search-box {
+  background: #f0f0ef;
+  border: 1px solid #e6e8ef;
+  border-radius: 3px;
+  padding: 30px;
+}
+
+/* line 797, ../_sass/kazu/newstyle.scss */
+.form-list {
+  margin-top: 10px;
+  overflow: hidden;
+}
+/* line 801, ../_sass/kazu/newstyle.scss */
+.form-list.half li {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+}
+/* line 805, ../_sass/kazu/newstyle.scss */
+.form-list.half li:nth-child(odd) {
+  padding-right: 10px;
+}
+/* line 808, ../_sass/kazu/newstyle.scss */
+.form-list.half li:nth-child(even) {
+  padding-left: 10px;
+}
+/* line 813, ../_sass/kazu/newstyle.scss */
+.form-list li {
+  margin-bottom: 20px;
+}
+/* line 815, ../_sass/kazu/newstyle.scss */
+.form-list li dl {
+  width: 100%;
+  display: table;
+}
+/* line 818, ../_sass/kazu/newstyle.scss */
+.form-list li dl dt {
+  display: table-cell;
+  font-size: 14px;
+  vertical-align: middle;
+  font-weight: bold;
+  width: 100px;
+}
+/* line 824, ../_sass/kazu/newstyle.scss */
+.form-list li dl dt label {
+  font-weight: bold;
+}
+/* line 828, ../_sass/kazu/newstyle.scss */
+.form-list li dl dd {
+  display: table-cell;
+  font-size: 14px;
+  vertical-align: middle;
+}
+/* line 836, ../_sass/kazu/newstyle.scss */
+.form-list li dl.error dd input[type="text"] {
+  background: #ffeaea;
+}
+/* line 839, ../_sass/kazu/newstyle.scss */
+.form-list li dl.error dd .form-text {
+  color: #e45733;
+}
+
+/* line 850, ../_sass/kazu/newstyle.scss */
+.form-action.center {
+  text-align: center;
+}
+/* line 853, ../_sass/kazu/newstyle.scss */
+.form-action .btn {
+  margin: 0 10px;
+}
+
+/* line 858, ../_sass/kazu/newstyle.scss */
+input[type="text"] {
+  display: inline-block;
+  vertical-align: top;
+  background: #fff;
+  width: 390px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 8px 20px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  border: 1px solid #d6dae4;
+  border-radius: 2px;
+}
+/* line 871, ../_sass/kazu/newstyle.scss */
+input[type="text"].small {
+  height: 25px;
+  padding: 2px 10px;
+  font-size: 13px;
+  line-height: 19px;
+}
+/* line 877, ../_sass/kazu/newstyle.scss */
+input[type="text"]:disabled {
+  background: #d0cfcf;
+}
+
+/* line 883, ../_sass/kazu/newstyle.scss */
+label.radio {
+  cursor: pointer;
+  height: 22px;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  padding-left: 30px;
+  padding-right: 40px;
+  line-height: 22px;
+}
+/* line 895, ../_sass/kazu/newstyle.scss */
+label.radio:before {
+  left: 0;
+  top: 0;
+  box-shadow: 0px 1px 1px 0px rgba(39, 42, 48, 0.38) inset;
+  content: '';
+  position: absolute;
+  z-index: 5;
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
+}
+/* line 907, ../_sass/kazu/newstyle.scss */
+label.radio:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 7px;
+  display: block;
+  margin-top: -4px;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 4px;
+  z-index: 2;
+}
+/* line 921, ../_sass/kazu/newstyle.scss */
+label.radio input[type="radio"] {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 20px;
+  width: 22px;
+  height: 22px;
+  left: -40px;
+  box-shadow: 39px 0px #f1f2f5;
+  border-radius: 11px;
+  z-index: 3;
+}
+/* line 934, ../_sass/kazu/newstyle.scss */
+label.radio input[type="radio"]:checked {
+  border: none;
+  box-shadow: 40px 0px #958259;
+  border-radius: 11px;
+  z-index: 1;
+}
+
+/* line 944, ../_sass/kazu/newstyle.scss */
+label.checkbox {
+  cursor: pointer;
+  height: 22px;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  padding-left: 30px;
+  padding-right: 40px;
+  line-height: 22px;
+  font-size: 14px;
+}
+/* line 955, ../_sass/kazu/newstyle.scss */
+label.checkbox:before {
+  left: 0;
+  top: 0;
+  box-shadow: 0px 1px 1px 0px rgba(39, 42, 48, 0.38) inset;
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  box-sizing: border-box;
+  z-index: 5;
+  border-radius: 5px;
+}
+/* line 967, ../_sass/kazu/newstyle.scss */
+label.checkbox:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  display: block;
+  margin-top: -6px;
+  width: 4px;
+  height: 7px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  z-index: 2;
+}
+/* line 983, ../_sass/kazu/newstyle.scss */
+label.checkbox input[type="checkbox"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 20px;
+  width: 22px;
+  height: 22px;
+  left: -40px;
+  box-shadow: 39px 0px #f1f2f5;
+  border-radius: 5px;
+  z-index: 3;
+}
+/* line 996, ../_sass/kazu/newstyle.scss */
+label.checkbox input[type="checkbox"]:checked {
+  border: none;
+  box-shadow: 40px 0px #958259;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+/* line 1005, ../_sass/kazu/newstyle.scss */
+textarea {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  width: 390px;
+  min-height: 200px;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #d6dae4;
+  border-radius: 2px;
+}
+
+/* line 1022, ../_sass/kazu/newstyle.scss */
+input.w-max, textarea.w-max, .select.w-max {
+  width: 100%;
+}
+/* line 1025, ../_sass/kazu/newstyle.scss */
+input.w50, textarea.w50, .select.w50 {
+  width: 50px;
+}
+/* line 1028, ../_sass/kazu/newstyle.scss */
+input.w70, textarea.w70, .select.w70 {
+  width: 70px;
+}
+/* line 1031, ../_sass/kazu/newstyle.scss */
+input.w80, textarea.w80, .select.w80 {
+  width: 80px;
+}
+/* line 1034, ../_sass/kazu/newstyle.scss */
+input.w90, textarea.w90, .select.w90 {
+  width: 90px;
+}
+/* line 1037, ../_sass/kazu/newstyle.scss */
+input.w100, textarea.w100, .select.w100 {
+  width: 100px;
+}
+/* line 1040, ../_sass/kazu/newstyle.scss */
+input.w130, textarea.w130, .select.w130 {
+  width: 130px;
+}
+/* line 1043, ../_sass/kazu/newstyle.scss */
+input.w150, textarea.w150, .select.w150 {
+  width: 150px;
+}
+/* line 1046, ../_sass/kazu/newstyle.scss */
+input.w170, textarea.w170, .select.w170 {
+  width: 170px;
+}
+/* line 1049, ../_sass/kazu/newstyle.scss */
+input.w210, textarea.w210, .select.w210 {
+  width: 210px;
+}
+/* line 1052, ../_sass/kazu/newstyle.scss */
+input.w250, textarea.w250, .select.w250 {
+  width: 250px;
+}
+/* line 1055, ../_sass/kazu/newstyle.scss */
+input.w260, textarea.w260, .select.w260 {
+  width: 260px;
+}
+/* line 1058, ../_sass/kazu/newstyle.scss */
+input.w360, textarea.w360, .select.w360 {
+  width: 360px;
+}
+/* line 1061, ../_sass/kazu/newstyle.scss */
+input.w390, textarea.w390, .select.w390 {
+  width: 390px;
+}
+/* line 1064, ../_sass/kazu/newstyle.scss */
+input.w520, textarea.w520, .select.w520 {
+  width: 520px;
+}
+/* line 1067, ../_sass/kazu/newstyle.scss */
+input.w600, textarea.w600, .select.w600 {
+  width: 600px;
+}
+/* line 1070, ../_sass/kazu/newstyle.scss */
+input.w750, textarea.w750, .select.w750 {
+  width: 750px;
+}
+/* line 1073, ../_sass/kazu/newstyle.scss */
+input.h25, textarea.h25, .select.h25 {
+  height: 25px;
+}
+/* line 1076, ../_sass/kazu/newstyle.scss */
+input.h23, textarea.h23, .select.h23 {
+  height: 23px;
+}
+
+/* line 1080, ../_sass/kazu/newstyle.scss */
+.select {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: 390px;
+  height: 40px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #d6dae4;
+  border-radius: 2px;
+  overflow: hidden;
+}
+/* line 1094, ../_sass/kazu/newstyle.scss */
+.select:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  margin-top: -3px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #958259;
+}
+/* line 1106, ../_sass/kazu/newstyle.scss */
+.select .display {
+  display: block;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 38px;
+  padding: 0 30px 0 20px;
+  z-index: 1;
+}
+/* line 1119, ../_sass/kazu/newstyle.scss */
+.select select {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  border: none;
+  z-index: 10;
+  opacity: 0;
+  display: block;
+}
+/* line 1129, ../_sass/kazu/newstyle.scss */
+.select.small {
+  height: 25px;
+}
+/* line 1131, ../_sass/kazu/newstyle.scss */
+.select.small:after {
+  right: 9px;
+  top: 50%;
+  margin-top: -2px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #958259;
+}
+/* line 1142, ../_sass/kazu/newstyle.scss */
+.select.small .display {
+  font-size: 13px;
+  line-height: 23px;
+  padding: 0 20px 0 10px;
+}
+
+/* tab
+-------------------------------------------------- */
+/* line 1155, ../_sass/kazu/newstyle.scss */
+.tab ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* line 1160, ../_sass/kazu/newstyle.scss */
+.tab ul li {
+  float: left;
+  width: 50%;
+}
+/* line 1164, ../_sass/kazu/newstyle.scss */
+.tab ul li a {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  line-height: 36px;
+  padding: 10px 0;
+  text-align: center;
+  text-decoration: none;
+  background: #e6e8ef;
+  border-bottom: 4px solid #cecfd6;
+  position: relative;
+}
+/* line 1179, ../_sass/kazu/newstyle.scss */
+.tab ul li.active a {
+  color: #fff;
+  background: #515c6e;
+  border-bottom-color: #455267;
+}
+/* line 1184, ../_sass/kazu/newstyle.scss */
+.tab ul li.active a:before, .tab ul li.active a:after {
+  content: '';
+  position: absolute;
+  display: block;
+  border-top: 8px solid #515c6e;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  bottom: -12px;
+  left: 50%;
+  margin-left: -12px;
+  z-index: 10;
+}
+/* line 1197, ../_sass/kazu/newstyle.scss */
+.tab ul li.active a:after {
+  border-top: 8px solid #455267;
+}
+
+/* table
+-------------------------------------------------- */
+/* line 1209, ../_sass/kazu/newstyle.scss */
+table.table {
+  border-left: 1px solid #d6dae4;
+  border-top: 1px solid #d6dae4;
+  width: 100%;
+  margin: 10px 0 20px;
+  /*&.mb0{
+  	margin-bottom: 0;
+  }*/
+}
+/* line 1218, ../_sass/kazu/newstyle.scss */
+table.table tr.active {
+  background: #fff9eb;
+}
+/* line 1221, ../_sass/kazu/newstyle.scss */
+table.table tr th, table.table tr td {
+  border-right: 1px solid #d6dae4;
+  border-bottom: 1px solid #d6dae4;
+}
+/* line 1224, ../_sass/kazu/newstyle.scss */
+table.table tr th .radio, table.table tr td .radio {
+  vertical-align: top;
+  padding-left: 22px;
+  padding-right: 0;
+}
+/* line 1230, ../_sass/kazu/newstyle.scss */
+table.table tr th {
+  background: #e5e6ed;
+  text-align: center;
+  font-size: 13px;
+  line-height: 23px;
+  padding: 5px 0 5px 0;
+  vertical-align: middle;
+}
+/* line 1238, ../_sass/kazu/newstyle.scss */
+table.table tr td {
+  font-size: 13px;
+  line-height: 23px;
+  padding: 5px 20px;
+  vertical-align: middle;
+}
+/* line 1244, ../_sass/kazu/newstyle.scss */
+table.table tr td.mark {
+  width: 22px;
+}
+/* line 1247, ../_sass/kazu/newstyle.scss */
+table.table tr th.mark {
+  width: 22px;
+  padding: 5px 20px;
+}
+/* line 1251, ../_sass/kazu/newstyle.scss */
+table.table tr:hover td {
+  background: #fff9eb;
+}
+/* line 1255, ../_sass/kazu/newstyle.scss */
+table.table tr .th-inner {
+  position: relative;
+  padding-right: 40px;
+}
+/* line 1258, ../_sass/kazu/newstyle.scss */
+table.table tr .th-inner .sort-desc, table.table tr .th-inner .sort-asc {
+  display: block;
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  background: #515c6e;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -7px;
+}
+/* line 1269, ../_sass/kazu/newstyle.scss */
+table.table tr .th-inner .sort-desc:before, table.table tr .th-inner .tab ul li.active a.sort-desc:after, .tab ul li.active table.table tr .th-inner a.sort-desc:after, .tab ul li.active table.table tr .th-inner a.sort-asc:after, table.table tr .th-inner .tab ul li.active a.sort-asc:after, table.table tr .th-inner .sort-asc:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -2px;
+  margin-left: -4px;
+  border-top: 6px solid #fff;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+/* line 1285, ../_sass/kazu/newstyle.scss */
+table.table tr .th-inner .sort-asc:before, table.table tr .th-inner .tab ul li.active a.sort-asc:after, .tab ul li.active table.table tr .th-inner a.sort-asc:after {
+  margin-top: -3px;
+  border-top: none;
+  border-bottom: 6px solid #fff;
+}
+
+/* line 1297, ../_sass/kazu/newstyle.scss */
+.table-foot {
+  background: #f4f5f9;
+  border-left: 1px solid #d6dae4;
+  border-right: 1px solid #d6dae4;
+  border-bottom: 1px solid #d6dae4;
+  padding: 10px 0;
+}
+
+/* line 1306, ../_sass/kazu/newstyle.scss */
+.pagination {
+  margin: 20px 0;
+}
+/* line 1308, ../_sass/kazu/newstyle.scss */
+.pagination ul {
+  text-align: center;
+}
+/* line 1310, ../_sass/kazu/newstyle.scss */
+.pagination ul li {
+  display: inline-block;
+  margin: 0 3px;
+}
+/* line 1313, ../_sass/kazu/newstyle.scss */
+.pagination ul li a, .pagination ul li span {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d6dae4;
+  text-align: center;
+  line-height: 28px;
+  font-size: 12px;
+  text-decoration: none;
+}
+/* line 1324, ../_sass/kazu/newstyle.scss */
+.pagination ul li.active a, .pagination ul li.active span, .pagination ul li a:hover {
+  color: #fff;
+  background: #958259;
+  border-color: #958259;
+}
+
+/* movable-list-box
+-------------------------------------------------- */
+/* line 1336, ../_sass/kazu/newstyle.scss */
+.movable-list-box {
+  width: 100%;
+}
+/* line 1339, ../_sass/kazu/newstyle.scss */
+.movable-list-box .left-box, .movable-list-box .right-box {
+  overflow-y: scroll;
+  /*span.title{
+  	background: #989ead;
+  	color: #fff;
+  	font-size: 14px;
+  }*/
+}
+/* line 1341, ../_sass/kazu/newstyle.scss */
+.movable-list-box .left-box p.title, .movable-list-box .right-box p.title {
+  background: #989ead;
+  color: #fff;
+  text-align: center;
+  line-height: 24px;
+  padding: 8px 0;
+  font-size: 14px;
+  border: 1px solid #d6dae4;
+}
+/* line 1356, ../_sass/kazu/newstyle.scss */
+.movable-list-box .right-box {
+  /*span.title{
+  	background: #dadce5;
+  	color: $color-black;
+  }*/
+}
+/* line 1358, ../_sass/kazu/newstyle.scss */
+.movable-list-box .right-box p.title {
+  background: #dadce5;
+  color: #282b30;
+}
+/* line 1367, ../_sass/kazu/newstyle.scss */
+.movable-list-box .control-box {
+  width: 240px;
+  padding: 0 25px;
+  vertical-align: middle;
+  overflow: hidden;
+  margin: auto;
+}
+/* line 1373, ../_sass/kazu/newstyle.scss */
+.movable-list-box .control-box .btn {
+  margin: 20px 5px 25px;
+  width: 110px;
+  float: left;
+}
+/* line 1381, ../_sass/kazu/newstyle.scss */
+.movable-list-box .control-box .action-hidden:before, .movable-list-box .control-box .tab ul li.active a.action-hidden:after, .tab ul li.active .movable-list-box .control-box a.action-hidden:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -26px;
+  right: 50%;
+  margin-right: -9px;
+  border-left: 14px solid #dbdcde;
+  border-top: 19px solid transparent;
+  border-bottom: 19px solid transparent;
+  transform: rotate(-90deg);
+  z-index: 6;
+  transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+}
+/* line 1401, ../_sass/kazu/newstyle.scss */
+.movable-list-box .control-box .action-hidden:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -28px;
+  right: 50%;
+  margin-right: -9px;
+  border-left: 14px solid #bbc2cc;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  z-index: 5;
+  transform: rotate(-90deg);
+}
+/* line 1418, ../_sass/kazu/newstyle.scss */
+.movable-list-box .control-box .action-hidden:hover:before, .movable-list-box .control-box .tab ul li.active a.action-hidden:hover:after, .tab ul li.active .movable-list-box .control-box a.action-hidden:hover:after {
+  border-left-color: #898a8e;
+}
+/* line 1426, ../_sass/kazu/newstyle.scss */
+.movable-list-box .control-box .action-show:before, .movable-list-box .control-box .tab ul li.active a.action-show:after, .tab ul li.active .movable-list-box .control-box a.action-show:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 26px;
+  left: 50%;
+  margin-left: -9px;
+  border-right: 14px solid #515c6e;
+  border-top: 19px solid transparent;
+  border-bottom: 19px solid transparent;
+  z-index: 6;
+  transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  transform: rotate(-90deg);
+}
+/* line 1442, ../_sass/kazu/newstyle.scss */
+.movable-list-box .control-box .action-show:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 26px;
+  left: 50%;
+  margin-left: -9px;
+  border-right: 14px solid #354051;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  z-index: 5;
+  transform: rotate(-90deg);
+}
+/* line 1457, ../_sass/kazu/newstyle.scss */
+.movable-list-box .control-box .action-show:hover:before, .movable-list-box .control-box .tab ul li.active a.action-show:hover:after, .tab ul li.active .movable-list-box .control-box a.action-show:hover:after {
+  border-right-color: #8d9fbd;
+}
+/* line 1464, ../_sass/kazu/newstyle.scss */
+.movable-list-box ul.list {
+  border-left: 1px solid #d6dae4;
+  border-right: 1px solid #d6dae4;
+  border-bottom: 1px solid #d6dae4;
+  overflow: scroll;
+}
+/* line 1470, ../_sass/kazu/newstyle.scss */
+.movable-list-box ul.list li {
+  width: 100%;
+  display: table;
+  border-bottom: 1px solid #d6dae4;
+  line-height: 24px;
+  font-size: 13px;
+}
+/* line 1476, ../_sass/kazu/newstyle.scss */
+.movable-list-box ul.list li.active {
+  background: #fff9eb;
+}
+/* line 1479, ../_sass/kazu/newstyle.scss */
+.movable-list-box ul.list li .list-inner {
+  display: table-row;
+}
+/* line 1483, ../_sass/kazu/newstyle.scss */
+.movable-list-box ul.list li span.number {
+  display: table-cell;
+  padding: 5px 20px;
+  width: 100px;
+}
+/* line 1487, ../_sass/kazu/newstyle.scss */
+.movable-list-box ul.list li span.number.text-center {
+  text-align: center;
+}
+/* line 1491, ../_sass/kazu/newstyle.scss */
+.movable-list-box ul.list li span.name {
+  display: table-cell;
+  padding: 5px 20px;
+  text-align: left;
+}
+
+/* Button Module
+-------------------------------------------------- */
+/* line 1503, ../_sass/kazu/newstyle.scss */
+.modal-area {
+  display: none;
+}
+
+/* line 1506, ../_sass/kazu/newstyle.scss */
+.modal-content {
+  background: #fff;
+  min-width: 640px;
+  z-index: 20;
+}
+/* line 1510, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-head {
+  background: #e6e8ef;
+  position: relative;
+  text-align: center;
+}
+/* line 1514, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-head p.title {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  padding: 13px 0;
+}
+/* line 1521, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-head .close {
+  width: 50px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-left: 1px solid #d6dae4;
+  background: url(../img/common/icon-close.svg) no-repeat center;
+  background-size: 12px auto;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+}
+/* line 1532, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-head .close:hover {
+  -ms-filter: "alpha(opacity=$num)";
+  /* IE8 */
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$num)";
+}
+/* line 1537, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-inner {
+  padding: 30px;
+}
+/* line 1539, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-inner.nopadding {
+  padding: 0;
+}
+/* line 1542, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-inner .sub-title {
+  font-weight: bold;
+  line-height: 40px;
+  margin-left: 30px;
+}
+/* line 1547, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-inner table.user {
+  width: 100%;
+  border-top: 1px solid #d6dae4;
+}
+/* line 1550, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-inner table.user th, .modal-content .modal-inner table.user td {
+  font-size: 14px;
+  line-height: 24px;
+  padding: 8px 30px;
+}
+/* line 1555, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-inner table.user th {
+  font-weight: bold;
+  border-right: 1px solid #d6dae4;
+  border-bottom: 1px solid #d6dae4;
+  width: 115px;
+}
+/* line 1561, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-inner table.user td {
+  border-bottom: 1px solid #d6dae4;
+}
+/* line 1563, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-inner table.user td .td-content {
+  height: 150px;
+  overflow-y: scroll;
+}
+/* line 1567, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-inner table.user td.scroll {
+  padding: 0 0 0 30px;
+  margin: 8px 0;
+}
+/* line 1573, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-inner .text {
+  text-align: center;
+  padding: 30px 0;
+}
+/* line 1577, ../_sass/kazu/newstyle.scss */
+.modal-content .modal-inner .form-action {
+  padding-top: 10px;
+}

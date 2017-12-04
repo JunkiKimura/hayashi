@@ -1,0 +1,1582 @@
+@charset "utf-8";
+
+@import "../mixin";
+
+/* -----------------------------------------------
+ [1. Reset(リセット) + Base(ベース)]
+-------------------------------------------------- */
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,600i,700';
+
+html * {
+	/*-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;*/
+	-webkit-font-smoothing: antialiased;
+	-webkit-appearance: none;
+	outline: none;
+	-moz-osx-font-smoothing:grayscale;
+	text-rendering : optimizeLegibility;//カーニングとリガチャ（合字） をうまい具合に調整してくれる
+	-webkit-text-rendering : optimizeLegibility;
+	-webkit-text-size-adjust: 100%;
+}
+
+html {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+	/* ゴシック */
+	@include font-gothic;
+	font-size: 14px;
+	line-height: 1.78;
+	color: $font-color;
+	-webkit-text-size-adjust: 100%;
+	background-color: #fff;
+}
+
+html,body,div,span,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,code,del,em,img,strong,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,
+table,caption,tbody,tfoot,thead,tr,th,td{
+	margin: 0;//外側の余白
+	padding: 0;//内側の余白
+	vertical-align: baseline;//垂直方向の位置揃え
+	font-style: normal;
+	font-weight: normal;
+}
+
+article,aside,figure,footer,header,hgroup,menu,nav,section{
+	margin: 0;
+	padding: 0;
+	border: none;//余白の間の境界
+	display: block;//塊　要素は縦に並ぶ
+	outline: none;
+}
+
+h1,h2,h3,h4,h5,h6,dt {
+	line-height: 1.47;//文字の高さ
+}
+
+p {
+	line-height: 1.67;
+}
+dd,li,th,td,input,textarea {
+	line-height: 1.67;
+	text-align: left;
+}
+
+ul,ol {
+	list-style-type: none; /* マークを使用しない */
+}
+img {
+	width: 100%; height: auto;
+	vertical-align: top;
+}
+a,input,button,textarea{
+	outline : none;//buttonなどを囲む線
+	color: $font-color;
+}
+a:visited {
+	color: $font-color;
+}
+a:active {
+	color: $font-color;
+}
+::-moz-selection {
+	background-color: #a7bbfe;
+}
+::selection {
+	background-color: #a7bbfe;
+}
+body.other{
+	.d_tablet,.d_smp{
+		display: none !important;
+	}
+}
+
+body.tablet,body.smp{
+	.d_pc{
+		display: none !important;
+	}
+}
+
+/* [1. Reset(リセット) + Base(ベース)] --> End */
+
+/* -----------------------------------------------
+ [2. Module(モジュール)]
+-------------------------------------------------- */
+/* Button Module
+-------------------------------------------------- */
+
+
+/* Normal Button */
+.btn{
+	position: relative;
+	height: 40px;
+	//box作成
+	box-sizing: border-box;//box化
+	background: #515c6e;
+	border-bottom: 1px solid #303a49;
+	border-top: 1px solid #626b79;
+	border-left: 1px solid #354051;
+	border-right: 1px solid #354051;
+	border-radius: 3px;
+	@include easing(.3);
+	&:hover{
+		background: #8d9fbd;
+	}
+	> a, span, button{
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		display: block;
+		background: transparent;
+		border: none;
+		padding: 0;
+		text-decoration: none;
+		position: relative;
+		color: #fff;
+		font-size: 14px;
+		line-height: 38px;
+		text-align: center;
+	}
+
+	/* Icon */
+	@mixin icon ($name)
+	{
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0; bottom: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+		width: 17px; height: 38px;
+		background-image: url("../img/common/icon-#{$name}.svg");
+		right: 20px;
+	}
+	&.icon-search{
+		&:after{
+			@include icon("search");
+		}
+	}
+	&.icon-upload{
+		&:after{
+			@include icon("upload");
+			width: 15px;
+			right: 10px;
+		}
+	}
+	&.icon-download{
+		&:after{
+			@include icon("download");
+			width: 16px;
+			right: 10px;
+		}
+	}
+	&.icon-add{
+		&:after{
+			@include icon("add");
+			width: 16px;
+			right: none;
+			left: 10px;
+			height: 13px;
+		}
+	}
+
+	&.icon-arrow{
+		&:after{
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			content: "";
+			display: block;
+			position: absolute;
+			top: 50%;
+			margin-top: -4px;
+			width: 6px; height: 6px;
+			border-right: 2px solid #fff;
+			border-bottom: 2px solid #fff;
+			right: 14px;
+			transform: rotate(-45deg);
+		}
+	}
+
+	/* design type */
+	&.type-gray{
+		//色を指定する
+		background: #dbdcde;
+		border-top: 1px solid #c7cdd5;
+		border-bottom: 1px solid #a5abb5;
+		border-left: 1px solid #bbc2cc;
+		border-right: 1px solid #bbc2cc;
+		&:hover{
+			background: #898a8e;
+		}
+		> a,span,button{
+			color: $color-black;
+		}
+	}
+	&.type-red{
+		background: #e45733;
+		border-top: 1px solid #d57057;
+		border-bottom: 1px solid #b34225;
+		border-left: 1px solid #cc5132;
+		border-right: 1px solid #cc5132;
+		&:hover{
+			background: #963a22;
+		}
+		> a,span,button{
+			font-weight: bold;
+		}
+	}
+	&.type-brown{
+		> a,span,button{
+			font-weight: bold;
+		}
+	}
+	&.type-name{
+		//白色を指定
+		background: #fff;
+		border-top: 1px solid #d4d7df;
+		border-bottom: 1px solid #b3b6c0;
+		border-left: 1px solid #caced9;
+		border-right: 1px solid #caced9;
+		> a,span,button{
+			//brawn
+			color: #8b723b;
+			text-align: left;
+			padding-left: 10px;
+		}
+		&:hover{
+			background: #ddd2b6;
+		}
+		//>マーク設定
+		&:after{
+			background-repeat: no-repeat;//一度だけ
+			background-position: center;//
+			background-size: contain;
+			content: "";
+			display: block;
+			position: absolute;
+			top: 50%;
+			margin-top: -2px;
+			width: 3px; height: 3px;
+			//_| の形にして45度回転
+			border-right: 1px solid #958259;
+			border-bottom: 1px solid #958259;
+			right: 10px;
+			transform: rotate(-45deg);
+		}
+	}
+
+
+
+	&.btn-center{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&.btn-inline{
+		display: inline-block;
+	}
+}
+
+.btn{
+	/* width */
+	&.w50{
+		width: 50px;
+	}
+	&.w90{
+		width: 90px;
+	}
+	&.w110{
+		width: 110px;
+	}
+	&.w170{
+		width: 170px;
+	}
+	&.w200{
+		width: 200px;
+	}
+	&.w220{
+		width: 220px;
+	}
+	&.w230{
+		width: 230px;
+	}
+	&.w260{
+		width: 260px;
+	}
+
+	/* height */
+	&.h50{
+		height: 50px;
+		> a,span,button{
+			line-height: 48px;
+		}
+	}
+	&.h25{
+		height: 25px;
+		> a,span,button{
+			font-size: 13px;
+			line-height: 23px;
+		}
+	}
+	&.h20{
+		height: 20px;
+		> a,span,button{
+			font-size: 11px;
+			line-height: 18px;
+		}
+	}
+}
+
+
+/* #Side
+-------------------------------------------------- */
+#side {
+  position: fixed;//ページがスクロールされても、いつでも同じ場所に配置される
+  top: 0;//画面の最上部
+	bottom: 0;//画面の最下部　ー＞画面全体に表示
+  //left: -220px;
+  //z-index: 20;
+  //box-shadow: 4px 0 10px rgba(51, 51, 52, 0.23);
+	//background: #fff;
+  overflow-y:scroll;//ページに表示されない部分をスクロールで表示
+  //@include easing-side(.3);
+
+  //side-inner
+  #side-inner{
+		//@include opacity(0);
+		width: 288px;
+    /*#site-logo{
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+    }*/
+
+    //user-box
+    .user-box{
+			background: $color-lightgray;
+			padding: 7px 20px;
+			.left{//image
+				display: table-cell;//**
+				vertical-align: middle;//上下中央揃え
+				.photo{
+					background-position: center;
+					background-size: cover;//縦横比を保持して、表示領域全体を覆うように背景画像を表示する
+					width: 30px;
+					height: 30px;
+					img{
+						display: block;
+					}
+				}
+			}
+			.right{
+				display: table-cell;//**
+				vertical-align: middle;
+				padding-left: 17px;
+				.name{
+					font-size: 14px;
+					font-weight: bold;
+					line-height: 42px;
+				}
+			}
+		}
+    //user-box END
+    //gnav
+    .gnav {
+      ul {
+        li {
+          border-bottom: 1px solid #d6dae4;
+          a {
+            display: block;//sideバーをブロック要素にして縦に並べる
+						//font-size: 14px;
+						line-height: 20px;
+						padding: 15px 0 15px 50px;//上　右　下　左
+						text-decoration: none;//下線を消す
+						font-weight: bold;
+						position: relative;
+						&:before{//画像挿入のための用意
+							content: '';
+							display: block;
+							position: absolute;
+							left: 20px;//左から20pxのところに
+							width: 22px;//大きさ22px
+							height: 20px;//高さ20pxのアイコンを設置
+							background-position: center;//真ん中に
+							background-repeat: no-repeat;//１個だけ
+						}
+            //main-menuの設定
+            &.arrow{
+							&:after{//文字列の後ろに定義
+								display: inline-block;
+								content: '';
+								background: url("../img/arrow.svg") no-repeat;
+								background-size: 9px auto;
+								width: 9px;//アイコンの大きさ
+								height: 18px;
+								position: absolute;
+								right: 20px;//右からいくつのとこに設置
+								transform: rotate(90deg);//下向き
+							}
+							&.active{//arrowに対して何らかの動作が行われたら(押されたら)
+								&:after{
+									transform: rotate(-90deg);
+								}
+							}
+						}
+            //main-menuの設定終わり
+          }
+					//今開いているページの部分を濃く表示
+					&.active > a, a:hover{
+						@include easing(.3);
+						background-color: $color-blue;
+						color: #fff;
+					}
+
+          //アイコンを追加
+          @for $i from 1 through 15 {
+            &.navi#{$i} {
+              a:before{
+  							background-image: url(../img/common/gnav#{$i}.svg);
+  							background-size: 16px auto;
+  						}
+  						&.active > a:before, > a:hover:before{
+  							background-image: url(../img/common/gnav#{$i}on.svg);
+  						}
+            }
+          }
+          //全naviに対してアイコン追加終わり
+
+          //sub-navigationの設定
+          .sub-nav{
+						border-top: 1px solid #d6dae4;
+						display: none;//非表示にし、要素ごと消す
+            //visibility:hidden;//非表示にするだけ、要素は残る
+            background: #f4f5f9;
+						li{
+							//border-bottom: none;
+							a{
+								line-height: 30px;
+								padding: 3px 0px 3px 50px;
+								font-size: 14px;
+								font-weight: normal;
+								&:before{
+									background-image: none;//横のアイコンを消す
+								}
+								&:hover{
+						      background-color: #d6dae4;
+									&:before{
+										background-image: none;
+									}
+								}
+							}
+						}
+					}
+          //sub-naviの終わり
+        }
+      }
+    }
+    //gnav end
+  }
+  //side-inner end
+}
+/* #Error
+-------------------------------------------------- */
+.error{
+	input[type="text"],textarea{
+		background: #fef4f6;
+	}
+}
+.error-text{
+	color:#e81162;
+	margin-top: 5px;
+	font-weight: bold;
+}
+//エラーメッセージ入る　の部分
+.form-text{
+	display: inline-block;
+	line-height: 40px;
+	&.small{
+		line-height: 25px;
+	}
+}
+/* #Content
+-------------------------------------------------- */
+
+#content{
+	padding-left: 70px;
+	min-width: 980px;
+	//@include easing-side(.3);
+	&.side-show{
+		padding-left: 288px;
+	}
+}
+
+/* #Header
+-------------------------------------------------- */
+
+#header{
+	background: $color-brown;
+	border-bottom: 1px solid $color-darkbrown;
+	height: 50px;
+	#header-inner{
+    position: absolute;//固定
+    right: 0;//右寄せ
+    .user-box {
+      float: left;//指定した要素を左にフロートさせ、続く要素は右に回り込みます
+      border-left: 1px solid #85734b;//濃い茶色
+      .logout{
+				border-left: 1px solid #a48e5f;//薄い茶色
+				font-weight: bold;
+				color: #fff;//白
+				font-size: 13px;
+				line-height: 20px;
+				padding: 15px 25px 15px 45px;
+				position: relative;
+				cursor: pointer;
+				@include easing(.3);
+				&:hover{
+					@include opacity(70);
+				}
+        &:before{// ^ ログアウト
+					content: '';
+					display: inline-block;
+					position: absolute;
+					background: url(../img/common/icon-logout.svg) no-repeat center;
+					width: 18px;//blockの大きさ
+					height: 48px;
+          //background-size:contain;
+					background-size: 18px auto;//アイコンの大きさ
+					left: 20px;//アイコンの規定からの位置
+					top: 0;
+				}
+
+			}
+			.name{
+				border-left: 1px solid #a48e5f;
+				font-weight: bold;
+				color: #fff;
+				font-size: 13px;
+				line-height: 20px;
+				padding: 15px 20px 15px 20px;
+				position: relative;
+				cursor: pointer;
+				@include easing(.3);
+				&:hover{
+					@include opacity(70);
+				}
+			}
+    }
+  }
+}
+
+/* #Footer
+-------------------------------------------------- */
+#footer {
+  margin-top: 60px;
+  .inner{
+		position: relative;//元々の表示される予定だった位置からの相対位置に配置するように調整される
+		min-width: 1007px;
+  }
+  .pagetop{
+    position: absolute;//viewportからの相対位置の代わりに、位置指定有効かつ最も近い世代の祖先要素からの相対位置に配置される
+    right: 30px;
+    top: -23px;
+    a{
+      width: 45px;//正方形
+      height: 45px;
+      border-radius: 50%;//円に
+      display: block;
+      text-indent: -9999px;
+      overflow: hidden;
+      background: $color-blue url(../img/common/arrow-top-white.svg) no-repeat center;
+      background-size: 7px 15px;
+      &:hover{
+       @include easing-original(.3);
+       @include opacity(70);
+      }
+    }
+  }
+  .footer-content{
+    overflow: hidden;//はみ出した部分は見えない
+    border-top: 1px solid $border-color;
+    padding-left: 30px;
+    ul{
+      overflow: hidden;
+      float: left;//左寄せ
+      li{
+        float: left;//横に表示
+        padding: 30px 0;//**
+        &.logo{
+          margin-right: 25px;
+          img{
+            margin-top: -5px;//画像の分
+          }
+        }
+        a{
+          text-decoration: none;//リンクの線を消す
+        }
+      }
+    }
+    .copy{
+      float: right;//右よせ
+      @include font-en;//english
+      font-size: 10px;
+      line-height: 20px;
+      padding: 30px 0;//**
+      text-align: center;
+      margin-right: 15px;
+    }
+  }
+}
+
+/* #Body
+-------------------------------------------------- */
+//ヘルプアイコン作成
+.help{
+	text-indent: -9999px;
+	width: 18px;
+	height: 22px;
+	display: inline-block;
+	background: url(../img/common/icon-help.svg) no-repeat center;
+	background-size: contain;
+}
+
+/* section parts */
+.section-container {
+  position: relative;
+  //パンくずリスト
+  .breadcrumb{
+		background: #f8f3e9;
+		border-bottom:1px solid #e2e2e2;
+		//box-shadow: 0px 1px 1px 0px #f1f1f1 inset;
+		height: 24px;
+		ul{
+			padding: 0px 30px ;
+			li{
+        //float: left;
+				display: inline-block;//ブロックごとの横並びになる
+				font-size: 11px;
+				span{
+					display: inline-block;
+					margin: 0 13px;//左右を開ける
+					color:#9c8a65;
+				}
+			}
+		}
+	}
+  //パンくずリスト end
+
+  //H1
+  h1{
+		font-size: 22px;
+		font-weight: bold;
+		line-height: 38px;
+		padding: 20px 0 20px 60px;
+		border-bottom: 2px solid $border-color;
+		position: relative;
+		&:before{
+			content: '';
+			display: block;
+			width: 11px;
+			height: 11px;
+			left: 30px;
+			top: 50%;
+			margin-top: -10px;
+			position: absolute;
+			border: 4px solid $color-brown;
+			border-right-color: $color-darkbrown;
+			border-bottom-color: $color-darkbrown;
+		}
+	}
+  //H1 END
+  //H2
+  h2{
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 33px;
+		padding: 13px 0 13px 60px;
+		border-top: 1px solid $border-color;
+		border-bottom: 2px solid $border-color;
+		background: #edeef2;//ちょっと濃いgray
+		position: relative;
+		&:before{
+      //基準となる中線を作る
+      content: '';
+			display: block;
+			width: 0px;
+			height: 4px;
+
+			left: 30px;//左から30px
+			top: 50%;
+			margin-top: -2px;
+			content: '';
+			display: block;
+			width: 0px;
+			height: 4px;//縦の長さ
+      position: absolute;
+			border-left: 9px solid $color-brown;//枠を厚くすることで、記号を作成
+			border-right: 9px solid $color-darkbrown;
+		}
+		&.step{
+			.number{
+				display: inline-block;
+				color: $color-brown;
+				@include font-en;
+				font-style: italic;
+				margin-right: 30px;//右の文章とあける
+			}
+		}
+	}
+  //H2 end
+  //H3
+  h3{
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 27px;
+		padding: 3px 0 3px 20px;
+		border-bottom: 1px solid #d6dae4;
+		position: relative;
+		//margin-bottom: 20px;
+		&:before{
+			left: 0;
+			top: 50%;//最上部の位置がh3の真ん中
+			margin-top: -6px;//アイコンの半分のサイズだけ上にあげる
+			content: '';
+			position: absolute;
+      //アイコン作成
+			display: block;
+			width: 0px;
+			height: 12px;
+			border-left: 12px solid $color-brown;
+		}
+	}
+  //H3 end
+	.section-content{
+		padding: 0 30px;
+		margin: 30px 0 50px;
+	}
+	.headline-text{
+		font-size: 16px;
+		line-height: 25px;
+		margin-top: 25px;
+		margin-bottom: 45px;
+	}
+	.subhead{
+		font-size: 16px;
+		line-height: 26px;
+		font-weight: bold;
+		margin-top: 20px;
+	}
+	.text{
+		margin-top: 20px;
+	}
+	.notice{
+		margin-top: 15px;
+		font-size: 11px;
+		line-height: 20px;
+	}
+	.search-box{
+		background: #f0f0ef;
+		border: 1px solid #e6e8ef;
+		border-radius: 3px;
+		padding: 30px;
+	}
+}
+
+  //form
+  .form-list{
+    margin-top: 10px;
+  	overflow: hidden;
+  	&.half{
+  		li{
+  			float: left;
+  			width: 50%;
+  			box-sizing: border-box;
+  			&:nth-child(odd){
+  				padding-right: 10px;
+  			}
+  			&:nth-child(even){
+  				padding-left: 10px;
+  			}
+  		}
+  	}
+  	li{
+  		margin-bottom: 20px;
+  		dl{
+  			width: 100%;
+  			display: table;
+  			dt{
+  				display: table-cell;
+  				font-size: 14px;
+          vertical-align: middle;
+  				font-weight: bold;
+  				width: 100px;
+  				label{
+  					font-weight: bold;
+  				}
+  			}
+  			dd{
+          display: table-cell;
+  				font-size: 14px;
+  				vertical-align: middle;
+          //background-color: #99cc00;
+  			}
+  			&.error{
+  				dd{
+  					input[type="text"]{
+  						background: #ffeaea;
+  					}
+  					.form-text{
+  						color: $color-red;
+  					}
+  				}
+  			}
+  		}
+  	}
+  }
+  //form end
+//form action
+.form-action{
+	&.center{
+		text-align: center;
+	}
+	.btn{
+		margin: 0 10px;
+	}
+}
+//form-action end
+	input[type="text"]{
+	  display: inline-block;
+	  vertical-align: top;
+	  background: #fff;
+		width: 390px;
+		max-width: 100%;
+		box-sizing: border-box;
+		padding: 8px 20px;
+		margin: 0;
+		font-size: 14px;
+		line-height: 22px;
+		border: 1px solid #d6dae4;
+		border-radius: 2px;
+		&.small{
+	    height: 25px;
+			padding: 2px 10px;
+			font-size: 13px;
+			line-height: 19px;
+	  }
+	  &:disabled{
+	  	background: #d0cfcf;
+	  }
+	}
+
+	//ラジオボックス作成
+	label.radio {
+	  cursor: pointer;
+	  height: 22px;
+	  border-radius: 2px;
+	  overflow: hidden;
+	  position: relative;
+	  display: inline-block;
+	  padding-left: 30px;
+		padding-right: 40px;
+	  line-height: 22px;
+		//font-size: 14px;
+		//ボタン作成
+	  &:before{
+	    left: 0;
+	    top: 0;
+	    box-shadow: 0px 1px 1px 0px rgba(39, 42, 48, 0.38) inset;
+	    content: '';
+	    position: absolute;
+	    //box-sizing: border-box;
+	    z-index: 5;
+			width: 22px;
+	    height: 22px;
+	    border-radius: 11px;//半径11の円
+	  }
+	  &:after {
+	    content: '';
+	    position: absolute;
+	    top: 50%;
+	    left: 7px;
+	    display: block;
+	    margin-top: -4px;
+	    width: 8px;
+	    height: 8px;
+			background: #fff;
+			border-radius: 4px;
+	    z-index: 2;
+	  }
+		//checkしたら色が変わる
+	 input[type="radio"] {
+	    //-moz-appearance: none;
+	    //-webkit-appearance: none;
+	    margin: 0;
+	    padding: 0;
+	    position: absolute;
+	    left: 20px;
+	    width: 22px;
+	    height: 22px;
+	    left: -40px;
+	    box-shadow : 39px 0px #f1f2f5;
+	    border-radius: 11px;
+	    z-index: 3;
+	    &:checked{
+	      border: none;
+	      box-shadow : 40px 0px #958259;
+	      border-radius: 11px;
+	      z-index: 1;
+	    }
+	  }
+	}
+
+	//チェックボックス
+	label.checkbox {
+	  cursor: pointer;
+	  height: 22px;
+	  border-radius: 2px;
+	  overflow: hidden;
+	  position: relative;
+	  display: inline-block;
+	  padding-left: 30px;
+		padding-right: 40px;
+	  line-height: 22px;
+		font-size: 14px;
+	  &:before{
+	    left: 0;
+	    top: 0;
+	    box-shadow: 0px 1px 1px 0px rgba(39, 42, 48, 0.38) inset;
+	    content: '';
+	    position: absolute;
+	    width: 22px;
+	    height: 22px;
+	    box-sizing: border-box;
+	    z-index: 5;
+	    border-radius: 5px;
+	  }
+	  &:after {
+	    content: '';
+	    position: absolute;
+	    top: 50%;
+	    left: 8px;
+	    display: block;
+	    margin-top: -6px;
+	    width: 4px;
+	    height: 7px;
+	    border-right: 2px solid #fff;
+	    border-bottom: 2px solid #fff;
+	    transform : rotate(45deg);
+	    -webkit-transform : rotate(45deg);
+	    -moz-transform: rotate(45deg);
+	    z-index: 2;
+	  }
+	  input[type="checkbox"] {
+	    -moz-appearance: none;
+	    -webkit-appearance: none;
+	    margin: 0;
+	    padding: 0;
+	    position: absolute;
+	    left: 20px;
+	    width: 22px;
+	    height: 22px;
+	    left: -40px;
+	    box-shadow : 39px 0px #f1f2f5;
+	    border-radius: 5px;
+	    z-index: 3;
+	    &:checked{
+	      border: none;
+	      box-shadow : 40px 0px #958259;
+	      border-radius: 5px;
+	      z-index: 1;
+	    }
+	  }
+	}
+
+textarea{
+  display: inline-block;
+	vertical-align: top;
+	box-sizing: border-box;
+	width: 390px;
+	//表示する高さの最小値
+  min-height: 200px;
+	//padding: 9px 20px;
+	font-size: 14px;
+	//line-height: 22px;
+  background: #fff;
+  border: 1px solid #d6dae4;
+  //margin: 0;
+  border-radius: 2px;
+}
+
+	input, textarea, .select{
+	  &.w-max{
+	    width: 100%;
+	  }
+		&.w50{
+	    width: 50px;
+	  }
+		&.w70{
+	    width: 70px;
+	  }
+	  &.w80{
+	    width: 80px;
+	  }
+		&.w90{
+	    width: 90px;
+	  }
+	  &.w100{
+	    width: 100px;
+	  }
+		&.w130{
+	    width: 130px;
+	  }
+	  &.w150{
+	    width: 150px;
+	  }
+		&.w170{
+	    width: 170px;
+	  }
+	  &.w210{
+	    width: 210px;
+	  }
+		&.w250{
+	    width: 250px;
+	  }
+	  &.w260{
+	    width: 260px;
+	  }
+	  &.w360{
+	    width: 360px;
+	  }
+	  &.w390{
+	    width: 390px;
+	  }
+		&.w520{
+	    width: 520px;
+	  }
+		&.w600{
+	    width: 600px;
+	  }
+	  &.w750{
+	    width: 750px;
+	  }
+	  &.h25{
+	    height: 25px;
+	  }
+	  &.h23{
+	    height: 23px;
+	  }
+	}
+.select{
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+	width: 390px;
+  height: 40px;
+  box-sizing: border-box;
+  background: #fff;
+  //margin: 0;
+  //padding: 0;
+	border: 1px solid #d6dae4;
+  border-radius: 2px;
+  overflow: hidden;
+	//▽マーク
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    margin-top: -3px;
+		//▽マーク作成
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+    border-top: 6px solid #958259;
+  }
+  .display{
+    display: block;
+    position: absolute;
+    //left: 0;
+    //top: 0;
+    width: 100%;
+    box-sizing: border-box;
+		font-size: 14px;
+    line-height: 38px;
+    padding: 0 30px 0 20px;
+    z-index: 1;
+  }
+	//セレクトの有効範囲を指定
+  select{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    border: none;
+    z-index: 10;
+    opacity: 0;
+    display: block;
+  }
+	//小さいセレクタ
+  &.small{
+    height: 25px;
+		&:after{
+			//下三角のマーク　小
+	    right: 9px;
+	    top: 50%;
+	    margin-top: -2px;
+	    width: 0;
+	    height: 0;
+			border-left: 4px solid transparent;
+			border-right: 4px solid transparent;
+	    border-top: 4px solid #958259;
+	  }
+    .display{
+			font-size: 13px;
+	    line-height: 23px;
+			padding: 0 20px 0 10px;
+    }
+  }
+}
+
+/* tab
+-------------------------------------------------- */
+.tab{
+	ul{
+		//並列表示
+		&:after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+		li{
+			float: left;
+			width: 50%;
+			//形や色
+			a{
+				display: block;
+				width: 100%;
+				font-size: 16px;
+				line-height: 36px;
+				padding: 10px 0;//上下
+				text-align: center;
+				text-decoration: none;
+				background: #e6e8ef;
+				border-bottom: 4px solid #cecfd6;
+				position: relative;
+				//@include easing(.3);
+			}
+			//クリック中
+			&.active{
+				a{
+					color: #fff;
+					background: #515c6e;
+					border-bottom-color: #455267;
+					//▽マーク作成
+					&:before{
+						content: '';
+						position: absolute;
+						display: block;
+						border-top: 8px solid #515c6e;
+						border-left: 12px solid transparent;
+						border-right: 12px solid transparent;
+						bottom: -12px;
+						left: 50%;
+						margin-left: -12px;
+						z-index: 10;
+					}
+					//上と色を変えるだけ
+					&:after{
+						@extend :before;
+						border-top: 8px solid #455267;
+						}
+				}
+			}
+		}
+	}
+}
+
+/* table
+-------------------------------------------------- */
+table.table{
+	border-left: 1px solid #d6dae4;
+	border-top: 1px solid #d6dae4;
+	width: 100%;
+	margin: 10px 0 20px;
+	/*&.mb0{
+		margin-bottom: 0;
+	}*/
+	tr{
+		&.active{
+			background: #fff9eb;
+		}
+		th,td{
+			border-right: 1px solid #d6dae4;
+			border-bottom: 1px solid #d6dae4;
+			.radio{
+				vertical-align: top;
+				padding-left: 22px;
+				padding-right: 0;
+			}
+		}
+		th{
+			background: #e5e6ed;
+			text-align: center;
+			font-size: 13px;
+			line-height: 23px;
+			padding: 5px 0 5px 0;
+			vertical-align: middle;
+		}
+		td{
+			font-size: 13px;
+			line-height: 23px;
+			padding: 5px 20px;
+			vertical-align: middle;
+		}
+		td.mark{
+			width: 22px;
+		}
+		th.mark{
+			width: 22px;
+			padding: 5px 20px;
+		}
+		&:hover td{
+			background: #fff9eb;
+		}
+		//項目の横のマーク作成
+		.th-inner{
+			position: relative;
+			padding-right: 40px;
+			.sort-desc{
+				//マークの枠作成
+				display: block;
+				width: 13px;
+				height: 13px;
+				border-radius: 2px;
+				background: #515c6e;
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				margin-top: -7px;//高さの半分だけ
+				&:before{
+					content: '';
+					display: block;
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					margin-top: -2px;
+					margin-left: -4px;
+					//▽マークの作成
+					border-top: 6px solid #fff;
+					border-left: 4px solid transparent;
+					border-right: 4px solid transparent;
+				}
+			}
+			.sort-asc{
+				@extend .sort-desc;
+				&:before{
+					//△マークの作成
+					margin-top: -3px;
+					border-top: none;
+					border-bottom: 6px solid #fff;
+				}
+			}
+		}
+	}
+}
+
+//IPアドレスの部分
+.table-foot{
+	background: #f4f5f9;
+	border-left: 1px solid #d6dae4;
+	border-right: 1px solid #d6dae4;
+	border-bottom: 1px solid #d6dae4;
+	padding: 10px 0;
+}
+
+//ページ遷移の部分
+.pagination{
+	margin: 20px 0;
+	ul{
+		text-align: center;
+		li{
+			display: inline-block;//横並び
+			margin: 0 3px;
+			a, span{
+				//文字を四角に囲む
+				display: block;
+				width: 28px;
+				height: 28px;
+				border: 1px solid #d6dae4;
+				text-align: center;
+				line-height: 28px;
+				font-size: 12px;
+				text-decoration: none;
+			}
+			&.active a, &.active span, a:hover{
+				color: #fff;
+				background: $color-brown;
+				border-color: $color-brown;
+			}
+		}
+	}
+}
+
+/* movable-list-box
+-------------------------------------------------- */
+//商品の情報のリスト
+.movable-list-box{
+	width: 100%;
+
+	.left-box{
+		overflow-y:scroll;
+		p.title{
+			background: #989ead;
+			color: #fff;
+			text-align: center;
+			line-height: 24px;
+			padding: 8px 0;
+			font-size: 14px;
+			border: 1px solid #d6dae4;
+		}
+		/*span.title{
+			background: #989ead;
+			color: #fff;
+			font-size: 14px;
+		}*/
+	}
+	.right-box{
+		@extend .left-box;
+		p.title{
+			background: #dadce5;
+			color: $color-black;
+		}
+		/*span.title{
+			background: #dadce5;
+			color: $color-black;
+		}*/
+	}
+	.control-box{
+		width: 240px;
+		padding: 0 25px;
+		vertical-align: middle;
+		overflow: hidden;
+		margin: auto;
+		.btn{
+			margin: 20px 5px 25px;
+			width: 110px;
+			float: left;
+		}
+		.action-hidden{
+			//margin-right: 14px;
+			//beforeとafterで枠付きの^を作成
+			&:before{
+				// ^の部分の作成
+				content: '';
+				display: block;
+				position: absolute;
+				width: 0;
+				height: 0;
+				//位置合わせ
+				top: -26px;//上にあげる
+				right: 50%;
+				margin-right: -9px;
+				//マーク作成
+				border-left: 14px solid #dbdcde;//左側が底辺　高さ14px
+				border-top: 19px solid transparent;//横幅19+19px
+				border-bottom: 19px solid transparent;
+				transform:rotate(-90deg);
+				z-index: 6;
+				@include easing(.3);
+
+			}
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				width: 0;
+				height: 0;
+				top: -28px;
+				right: 50%;
+				margin-right: -9px;
+				//マーク作成(beforeをおおうように)
+				border-left: 14px solid #bbc2cc;
+				border-top: 20px solid transparent;
+				border-bottom: 20px solid transparent;
+				//beforeよりも階層を低く
+				z-index: 5;
+				transform:rotate(-90deg);
+			}
+			&:hover:before{
+				border-left-color: #898a8e;//type-grayのボタンの色と同じ
+			}
+		}
+
+		.action-show{
+			// margin-left: 14px;
+			//上と同様の操作を行う、逆三角形
+			&:before{
+				content: '';
+				display: block;
+				position: absolute;
+				width: 0;
+				height: 0;
+				top: 26px;
+				left: 50%;
+				margin-left: -9px;
+				border-right: 14px solid #515c6e;
+				border-top: 19px solid transparent;
+				border-bottom: 19px solid transparent;
+				z-index: 6;
+				@include easing(.3);
+				transform:rotate(-90deg);
+			}
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				width: 0;
+				height: 0;
+				top: 26px;
+				left: 50%;
+				margin-left: -9px;
+				border-right: 14px solid #354051;
+				border-top: 20px solid transparent;
+				border-bottom: 20px solid transparent;
+				z-index: 5;
+				transform:rotate(-90deg);
+			}
+			&:hover:before{
+				border-right-color: #8d9fbd;
+			}
+		}
+	}
+	//マーク作成終了
+
+	ul.list{
+		border-left: 1px solid #d6dae4;
+		border-right: 1px solid #d6dae4;
+		border-bottom: 1px solid #d6dae4;
+		// height: 210px;
+		overflow: scroll;
+		li{
+			width: 100%;
+			display: table;
+			border-bottom: 1px solid #d6dae4;
+			line-height: 24px;
+			font-size: 13px;
+			&.active{
+				background: #fff9eb;
+			}
+			.list-inner{
+				display: table-row;
+			}
+			//項目
+			span.number{
+				display: table-cell;
+				padding: 5px 20px;
+				width: 100px;
+				&.text-center{
+					text-align: center;
+				}
+			}
+			span.name{
+				display: table-cell;
+				padding: 5px 20px;
+				text-align: left;
+			}
+		}
+	}
+}
+
+/* Button Module
+-------------------------------------------------- */
+//modal
+.modal-area{
+	display: none;
+}
+.modal-content{
+	background: #fff;
+	min-width: 640px;
+	z-index: 20;
+	.modal-head{
+		background: #e6e8ef;
+		position: relative;
+		text-align: center;
+		p.title{
+			font-size: 16px;
+			font-weight: bold;
+			line-height: 24px;
+			padding: 13px 0;
+		}
+		// Xボタン作成
+		.close{
+			width: 50px;
+			position: absolute;;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			border-left: 1px solid #d6dae4;
+			background: url(../img/common/icon-close.svg) no-repeat center;
+			background-size: 12px auto;
+			cursor: pointer;
+			@include easing(.3);
+			&:hover{
+				@include opacity(70);
+			}
+		}
+	}
+	.modal-inner{
+		padding: 30px;
+		&.nopadding{
+			padding: 0;
+		}
+		.sub-title{
+			font-weight: bold;
+			line-height: 40px;
+			margin-left: 30px;
+		}
+		table.user{
+			width: 100%;
+			border-top: 1px solid #d6dae4;
+			th ,td{
+				font-size: 14px;
+				line-height: 24px;
+				padding: 8px 30px;
+			}
+			th{
+				font-weight: bold;
+				border-right: 1px solid #d6dae4;
+				border-bottom: 1px solid #d6dae4;
+				width: 115px;
+			}
+			td{
+				border-bottom: 1px solid #d6dae4;
+				.td-content{
+					height: 150px;
+					overflow-y:scroll;
+				}
+				&.scroll{
+					padding:0 0 0 30px;
+					margin: 8px 0 ;
+				}
+			}
+		}
+		.text{
+			text-align: center;
+			padding: 30px 0;
+		}
+		.form-action{
+			padding-top: 10px;
+		}
+	}
+}
+//modal　end
